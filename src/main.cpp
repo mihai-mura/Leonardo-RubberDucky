@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "Keyboard.h"
+#include "scripts.cpp"
 
 // script pins
 #define SCRIPT1_GND 4
@@ -8,13 +9,6 @@
 #define SCRIPT2_GND 7
 #define SCRIPT2 8
 #define SCRIPT2_PWR 9
-
-void typeKey(int key)
-{
-  Keyboard.press(key);
-  delay(50);
-  Keyboard.release(key);
-}
 
 void setup()
 {
@@ -48,7 +42,7 @@ void setup()
   {
     delay(500);
 
-    // INSERT SCRIPT 1 HERE
+    script1();
 
     Keyboard.end();
     return;
@@ -58,7 +52,7 @@ void setup()
   {
     delay(500);
 
-    // INSERT SCRIPT 2 HERE
+    script2();
 
     Keyboard.end();
     return;
